@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="R5b-4v-xXV">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="wCj-5K-AJp">
+            <objects>
+                <viewController id="UsL-wg-hBC" customClass="SplashViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Do3-gV-6Nb"/>
+                        <viewControllerLayoutGuide type="bottom" id="QCN-dh-pb0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tVv-5t-HXt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uEW-wY-hm0">
+                                <frame key="frameInset" width="375" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uEW-wY-hm0" secondAttribute="height" multiplier="375:667" id="EcF-qV-eYT"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uEW-wY-hm0" firstAttribute="height" secondItem="tVv-5t-HXt" secondAttribute="height" id="6qS-5c-ttn"/>
+                            <constraint firstItem="uEW-wY-hm0" firstAttribute="width" secondItem="tVv-5t-HXt" secondAttribute="width" id="7nw-nd-hvx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YWH-rp-bgP"/>
+                    <connections>
+                        <outlet property="adImageView" destination="uEW-wY-hm0" id="ABF-4T-70V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tbC-5D-YZN" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008.8" y="122.78860569715144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RNi-Q4-hhd">
+            <objects>
+                <navigationController id="R5b-4v-xXV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xzD-pt-JNW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UsL-wg-hBC" kind="relationship" relationship="rootViewController" id="iTe-YR-cfJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VvL-ZO-3Vy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="254" y="123"/>
+        </scene>
+    </scenes>
+</document>
