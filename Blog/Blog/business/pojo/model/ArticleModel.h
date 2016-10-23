@@ -11,8 +11,10 @@
 @interface ArticleModel : BaseModel
 @property int id;
 @property NSString *thumb;
+@property NSString *describe;
 @property NSString *title;
 @property NSString *content;
+@property NSString *css;
 @property NSString *content_md;
 @property int user_id;
 @property int cate_id;

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		776A62755B4237FE502D425C /* libPods-BlogTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C64DACA33B7AAFBC54FCB7 /* libPods-BlogTests.a */; };
 		8CE6D55AA6C7FF492CFB333B /* libPods-Blog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3E41863698073D32708C9C /* libPods-Blog.a */; };
+		BD8A827C1DBC557D00EA1971 /* HtmlUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8A827B1DBC557D00EA1971 /* HtmlUtils.m */; };
 		BD94CEB21DB37F7D00113453 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD94CEB11DB37F7D00113453 /* main.m */; };
 		BD94CEB51DB37F7D00113453 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD94CEB41DB37F7D00113453 /* AppDelegate.m */; };
 		BD94CEB81DB37F7D00113453 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD94CEB71DB37F7D00113453 /* ViewController.m */; };
@@ -30,7 +31,10 @@
 		BD94CF221DB3BB8900113453 /* InjectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BD94CF211DB3BB8900113453 /* InjectHelper.m */; };
 		BD94CF251DB4428E00113453 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD94CF241DB4428E00113453 /* MainViewController.m */; };
 		BD94CF591DB4455100113453 /* MainTabContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD94CF571DB4455100113453 /* MainTabContentViewController.m */; };
-		BD94CF5A1DB4455100113453 /* MainTabContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD94CF581DB4455100113453 /* MainTabContentViewController.xib */; };
+		BDD1BED31DB9ED7500C168DD /* UITableView+EmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD1BED21DB9ED7500C168DD /* UITableView+EmptyData.m */; };
+		BDD1BEDC1DBA092F00C168DD /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD1BEDB1DBA092F00C168DD /* UIView+Extension.m */; };
+		BDD1BEDF1DBA095400C168DD /* CFFlowButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD1BEDE1DBA095400C168DD /* CFFlowButtonView.m */; };
+		BDD1BEE11DBA0CC400C168DD /* MyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD1BEE01DBA0CC400C168DD /* MyButton.xib */; };
 		BDE7CCD11DB4A75200568D5D /* MainTabContentCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE7CCCF1DB4A75200568D5D /* MainTabContentCellTableViewCell.m */; };
 		BDE7CCD21DB4A75200568D5D /* MainTabContentCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE7CCD01DB4A75200568D5D /* MainTabContentCellTableViewCell.xib */; };
 		BDE7CCD51DB4B47400568D5D /* ImageLoadHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE7CCD41DB4B47400568D5D /* ImageLoadHelper.m */; };
@@ -64,6 +68,8 @@
 		87F1DC4A5547D2A5954A0515 /* Pods-BlogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlogTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlogTests/Pods-BlogTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9009F340AF588B9B63D0DFC4 /* libPods-BlogUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlogUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F17C23BA3B2E62E0DD590B4 /* Pods-Blog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blog.release.xcconfig"; path = "Pods/Target Support Files/Pods-Blog/Pods-Blog.release.xcconfig"; sourceTree = "<group>"; };
+		BD8A827A1DBC557D00EA1971 /* HtmlUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HtmlUtils.h; path = core/utils/HtmlUtils.h; sourceTree = "<group>"; };
+		BD8A827B1DBC557D00EA1971 /* HtmlUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HtmlUtils.m; path = core/utils/HtmlUtils.m; sourceTree = "<group>"; };
 		BD94CEAD1DB37F7D00113453 /* Blog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD94CEB11DB37F7D00113453 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BD94CEB31DB37F7D00113453 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -107,7 +113,14 @@
 		BD94CF241DB4428E00113453 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ui/MainViewController.m; sourceTree = "<group>"; };
 		BD94CF561DB4455100113453 /* MainTabContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabContentViewController.h; path = ui/MainTabContentViewController.h; sourceTree = "<group>"; };
 		BD94CF571DB4455100113453 /* MainTabContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabContentViewController.m; path = ui/MainTabContentViewController.m; sourceTree = "<group>"; };
-		BD94CF581DB4455100113453 /* MainTabContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainTabContentViewController.xib; path = ui/MainTabContentViewController.xib; sourceTree = "<group>"; };
+		BDD1BED11DB9ED7500C168DD /* UITableView+EmptyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+EmptyData.h"; sourceTree = "<group>"; };
+		BDD1BED21DB9ED7500C168DD /* UITableView+EmptyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+EmptyData.m"; sourceTree = "<group>"; };
+		BDD1BEDA1DBA092F00C168DD /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Extension.h"; path = "ui/widget/UIView+Extension.h"; sourceTree = "<group>"; };
+		BDD1BEDB1DBA092F00C168DD /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Extension.m"; path = "ui/widget/UIView+Extension.m"; sourceTree = "<group>"; };
+		BDD1BEDD1DBA095400C168DD /* CFFlowButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFFlowButtonView.h; path = ui/widget/CFFlowButtonView.h; sourceTree = "<group>"; };
+		BDD1BEDE1DBA095400C168DD /* CFFlowButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFFlowButtonView.m; path = ui/widget/CFFlowButtonView.m; sourceTree = "<group>"; };
+		BDD1BEE01DBA0CC400C168DD /* MyButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyButton.xib; sourceTree = "<group>"; };
+		BDD1BEE21DBA107B00C168DD /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		BDE7CCCE1DB4A75200568D5D /* MainTabContentCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabContentCellTableViewCell.h; path = ui/cell/MainTabContentCellTableViewCell.h; sourceTree = "<group>"; };
 		BDE7CCCF1DB4A75200568D5D /* MainTabContentCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabContentCellTableViewCell.m; path = ui/cell/MainTabContentCellTableViewCell.m; sourceTree = "<group>"; };
 		BDE7CCD01DB4A75200568D5D /* MainTabContentCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainTabContentCellTableViewCell.xib; path = ui/cell/MainTabContentCellTableViewCell.xib; sourceTree = "<group>"; };
@@ -209,6 +222,9 @@
 				BD94CEBE1DB37F7D00113453 /* LaunchScreen.storyboard */,
 				BD94CEC11DB37F7D00113453 /* Info.plist */,
 				BD94CEB01DB37F7D00113453 /* Supporting Files */,
+				BDD1BED11DB9ED7500C168DD /* UITableView+EmptyData.h */,
+				BDD1BED21DB9ED7500C168DD /* UITableView+EmptyData.m */,
+				BDD1BEE21DBA107B00C168DD /* Config.h */,
 			);
 			path = Blog;
 			sourceTree = "<group>";
@@ -250,7 +266,6 @@
 				BD94CF241DB4428E00113453 /* MainViewController.m */,
 				BD94CF561DB4455100113453 /* MainTabContentViewController.h */,
 				BD94CF571DB4455100113453 /* MainTabContentViewController.m */,
-				BD94CF581DB4455100113453 /* MainTabContentViewController.xib */,
 				BDE7CCDC1DB4C16D00568D5D /* DetailViewController.h */,
 				BDE7CCDD1DB4C16D00568D5D /* DetailViewController.m */,
 				BDE7CCDE1DB4C16D00568D5D /* DetailViewController.xib */,
@@ -282,6 +297,8 @@
 		BD94CEE91DB39F7600113453 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				BD8A827A1DBC557D00EA1971 /* HtmlUtils.h */,
+				BD8A827B1DBC557D00EA1971 /* HtmlUtils.m */,
 			);
 			name = core;
 			sourceTree = "<group>";
@@ -387,6 +404,11 @@
 		BDE7CCDB1DB4BE0D00568D5D /* widget */ = {
 			isa = PBXGroup;
 			children = (
+				BDD1BEE01DBA0CC400C168DD /* MyButton.xib */,
+				BDD1BEDA1DBA092F00C168DD /* UIView+Extension.h */,
+				BDD1BEDB1DBA092F00C168DD /* UIView+Extension.m */,
+				BDD1BEDD1DBA095400C168DD /* CFFlowButtonView.h */,
+				BDD1BEDE1DBA095400C168DD /* CFFlowButtonView.m */,
 			);
 			name = widget;
 			sourceTree = "<group>";
@@ -444,6 +466,7 @@
 				BD94CECE1DB37F7D00113453 /* Frameworks */,
 				BD94CECF1DB37F7D00113453 /* Resources */,
 				5F8F1C35E4165392A4A3B237 /* [CP] Copy Pods Resources */,
+				D008197E5CF1220DFE6E2060 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -506,10 +529,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD94CEC01DB37F7D00113453 /* LaunchScreen.storyboard in Resources */,
+				BDD1BEE11DBA0CC400C168DD /* MyButton.xib in Resources */,
 				BDE7CCE01DB4C16D00568D5D /* DetailViewController.xib in Resources */,
 				BD94CEBD1DB37F7D00113453 /* Assets.xcassets in Resources */,
 				BDE7CCD21DB4A75200568D5D /* MainTabContentCellTableViewCell.xib in Resources */,
-				BD94CF5A1DB4455100113453 /* MainTabContentViewController.xib in Resources */,
 				BD94CEBB1DB37F7D00113453 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,7 +566,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		04E360EBF41DCC9493796E5D /* [CP] Embed Pods Frameworks */ = {
@@ -573,7 +596,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		3125A90B1E83AA022A1EA29E /* [CP] Copy Pods Resources */ = {
@@ -603,7 +626,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5F8F1C35E4165392A4A3B237 /* [CP] Copy Pods Resources */ = {
@@ -651,6 +674,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlogTests/Pods-BlogTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D008197E5CF1220DFE6E2060 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlogUITests/Pods-BlogUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -661,6 +699,7 @@
 				BD94CEB81DB37F7D00113453 /* ViewController.m in Sources */,
 				BD94CF181DB3A95C00113453 /* GetHomeIndexResponse.m in Sources */,
 				BD94CF1B1DB3A9AB00113453 /* BaseResponse.m in Sources */,
+				BDD1BEDC1DBA092F00C168DD /* UIView+Extension.m in Sources */,
 				BD94CEFE1DB3A6EF00113453 /* TagModel.m in Sources */,
 				BDE7CCD11DB4A75200568D5D /* MainTabContentCellTableViewCell.m in Sources */,
 				BD94CF221DB3BB8900113453 /* InjectHelper.m in Sources */,
@@ -671,12 +710,15 @@
 				BD94CF0E1DB3A88F00113453 /* GetHomeIndexRequest.m in Sources */,
 				BD94CF0B1DB3A81400113453 /* BaseRequest.m in Sources */,
 				BD94CF071DB3A76A00113453 /* CateModel.m in Sources */,
+				BD8A827C1DBC557D00EA1971 /* HtmlUtils.m in Sources */,
 				BD94CEB21DB37F7D00113453 /* main.m in Sources */,
+				BDD1BEDF1DBA095400C168DD /* CFFlowButtonView.m in Sources */,
 				BD94CF1F1DB3AF6400113453 /* BlogApiImpl.m in Sources */,
 				BD94CEF51DB3A5F900113453 /* BaseModel.m in Sources */,
 				BD94CF251DB4428E00113453 /* MainViewController.m in Sources */,
 				BD94CEE61DB3801700113453 /* SplashViewController.m in Sources */,
 				BD94CF591DB4455100113453 /* MainTabContentViewController.m in Sources */,
+				BDD1BED31DB9ED7500C168DD /* UITableView+EmptyData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

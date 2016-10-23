@@ -7,16 +7,25 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Config.h"
+#import "UIColorHelper.h"
+#import "MDConstants.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
-
+- (void)setNav
+{
+    UINavigationBar *bar = [UINavigationBar appearance];
+    bar.barTintColor = [UIColorHelper colorWithRGBA:kMDColorPrimary700];
+    bar.tintColor = [UIColor whiteColor];
+    [bar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self setNav];
     return YES;
 }
 

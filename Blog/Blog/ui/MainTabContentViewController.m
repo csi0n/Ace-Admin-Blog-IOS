@@ -9,44 +9,48 @@
 #import "MainTabContentViewController.h"
 #import "MainTabContentCellTableViewCell.h"
 #import "ArticleModel.h"
+#import "TagModel.h"
 #import "ImageLoadHelper.h"
+#import "DetailViewController.h"
+#import <MJRefresh/MJRefreshNormalHeader.h>
+#import "UITableView+EmptyData.h"
+#import "CFFlowButtonView.h"
+#import "Masonry.h"
 @interface MainTabContentViewController ()<UITableViewDataSource,UITableViewDelegate>
-@property (strong, nonatomic) IBOutlet UITableView *table;
-@property(weak,nonatomic)CateModel *cate;
 @end
-
 @implementation MainTabContentViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     _table=[[UITableView alloc]initWithFrame:self.view.frame];
+    _table.separatorStyle = UITableViewCellSelectionStyleNone;
     _table.delegate=self;
     _table.dataSource=self;
+    _table.mj_header=[MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self.table reloadData];
+        [_table.mj_header endRefreshing];
+    }];
     [self.view addSubview:_table];
-    // Do any additional setup after loading the view from its nib.
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
--(void)initWithCate:(CateModel *)cate{
-    self.cate=cate;
-}
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.cate.articles count]==nil?0:[self.cate.articles count];
+    [tableView tableViewDisplayWitMsg:@"无数据" ifNecessaryForRowCount:[_cate.articles count]];
+    return [_cate.articles count];
+}
+
+-(NSMutableArray *)addTags:(ArticleModel *)article{
+    NSMutableArray *arrs=[NSMutableArray array];
+    for (int i=0; i<[article.tags count]; i++) {
+        TagModel *tag=article.tags[i];
+        UIButton *button=[[[NSBundle mainBundle] loadNibNamed:@"MyButton" owner:self options:nil] lastObject];
+        [button setTitle:tag.name forState:UIControlStateNormal];
+        [arrs addObject:button];
+    }
+    return arrs;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -58,12 +62,29 @@
         cell=[nib objectAtIndex:0];
     }
     ArticleModel *article=_cate.articles[indexPath.row];
-    if (article.thumb!=nil) {
+    if (article.thumb.length>0) {
         [ImageLoadHelper loadWithImageUrl:[NSString stringWithFormat:@"http://img.csi0n.com/%@",article.thumb] imageView:cell.head];
     }
     cell.title.text=article.title;
-    cell.content.text=article.content;
+    cell.content.text=article.describe;
+    CFFlowButtonView *flowButtonView = [[CFFlowButtonView alloc] initWithButtonList:[self addTags:article]];
+    [cell.tags addSubview:flowButtonView];
+    [flowButtonView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(cell.tags.mas_top);
+        make.left.equalTo(cell.tags.mas_left);
+        make.right.equalTo(cell.tags.mas_right);
+        make.bottom.equalTo(cell.tags.mas_bottom);
+    }];
     tableView.rowHeight = cell.frame.size.height;
+    cell.backgroundColor=[UIColor whiteColor];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ArticleModel *article=[self cate].articles[indexPath.row];
+    DetailViewController *detail=[[DetailViewController alloc] init];
+    detail.article=article;
+    [self.navigationController pushViewController:detail animated:YES];
 }
 @end

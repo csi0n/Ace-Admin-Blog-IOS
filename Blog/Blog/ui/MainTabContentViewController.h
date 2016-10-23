@@ -9,5 +9,7 @@
 #import "ViewController.h"
 #import "CateModel.h"
 @interface MainTabContentViewController : ViewController
--(void)initWithCate:(CateModel *)cate;
+@property CateModel *cate;
+@property (strong, nonatomic)  UITableView *table;
+@property (strong,nonatomic) UILabel *label;
 @end

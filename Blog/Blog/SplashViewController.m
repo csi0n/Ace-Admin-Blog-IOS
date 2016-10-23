@@ -35,24 +35,12 @@
     scaleAnimation.fillMode = kCAFillModeForwards;
     scaleAnimation.duration = 3;
     [_adImageView.layer addAnimation:scaleAnimation forKey:@"transform.scale"];
-    [self.navigationController pushViewController:[[MainViewController alloc] init] animated:YES];
-}
-
+    [self.navigationController pushViewController:[[MainViewController alloc] init] animated:NO];
+} 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

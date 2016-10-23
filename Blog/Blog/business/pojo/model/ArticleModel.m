@@ -14,6 +14,8 @@
              @"id" : @"id",
              @"thumb" : @"thumb",
              @"title" : @"title",
+             @"describe":@"describe",
+             @"css":@"css",
              @"content" : @"content",
              @"content_md" : @"content_md",
              @"user_id":@"user_id",
@@ -36,6 +38,8 @@
     [description appendFormat:@"self.id=%i", self.id];
     [description appendFormat:@", self.thumb=%@", self.thumb];
     [description appendFormat:@", self.title=%@", self.title];
+    [description appendFormat:@", self.describe=%@",self.describe];
+    [description appendFormat:@", self.css=%@",self.css];
     [description appendFormat:@", self.content=%@", self.content];
     [description appendFormat:@", self.content_md=%@", self.content_md];
     [description appendFormat:@", self.user_id=%i", self.user_id];
