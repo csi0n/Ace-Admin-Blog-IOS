@@ -8,6 +8,13 @@
 
 #import "BaseRequest.h"
 
-@implementation BaseRequest
+@implementation BaseRequest{}
+-(NSString *)description{
+    NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
+    [description appendFormat:@"self.completionHandler=%p", self.completionHandler];
+    [description appendFormat:@", self.responseModelClass=%@", self.responseModelClass];
+    [description appendString:@">"];
+    return description;
+}
 
 @end

@@ -1,45 +1,76 @@
 //
-//  MainTabContentViewController.m
+//  TagShowViewController.m
 //  Blog
 //
-//  Created by huaqing chen on 10/17/16.
+//  Created by huaqing chen on 10/25/16.
 //  Copyright © 2016 csi0n. All rights reserved.
 //
 
-#import "MainTabContentViewController.h"
-#import "MainTabContentCellTableViewCell.h"
-#import "ArticleModel.h"
-#import "TagModel.h"
-#import "ImageLoadHelper.h"
-#import "DetailViewController.h"
+#import "TagShowViewController.h"
+#import "GetTagShowRequest.h"
+#import "GetTagShowResponse.h"
+#import "BlogApi.h"
+#import "InjectHelper.h"
 #import <MJRefresh/MJRefreshNormalHeader.h>
-#import "UITableView+EmptyData.h"
+#import "ArticleModel.h"
+#import "MainTabContentCellTableViewCell.h"
+#import "ImageLoadHelper.h"
 #import "CFFlowButtonView.h"
+#import "UITableView+EmptyData.h"
 #import "Masonry.h"
-@interface MainTabContentViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import "DetailViewController.h"
+#import "MainNavControllerViewController.h"
+#import "MBProgressHUD.h"
+@interface TagShowViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property GetTagShowResponse *tagShow;
+@property (weak, nonatomic) IBOutlet UINavigationItem *titleBar;
+@property(nonatomic,strong)id <BlogApi> blogApi;
 @end
-@implementation MainTabContentViewController
+
+@implementation TagShowViewController
+- (IBAction)back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    _titleBar.title=_tag.name;
     _table=[[UITableView alloc]initWithFrame:self.view.frame];
     _table.separatorStyle = UITableViewCellSelectionStyleNone;
     _table.delegate=self;
     _table.dataSource=self;
     _table.mj_header=[MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self.table reloadData];
-        [_table.mj_header endRefreshing];
+        [self getRequest];
     }];
     [self.view addSubview:_table];
+    [self getRequest];
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)getRequest{
+    MBProgressHUD *hub=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hub.mode=MBProgressHUDModeIndeterminate;
+    hub.labelText=@"加载中...";
+    GetTagShowRequest *request=[GetTagShowRequest requestWithTagId:_tag.id];
+    request.responseModelClass=[GetTagShowResponse class];
+    request.completionHandler=^(BaseRequest *task,id responseObj, NSError *error){
+        if (!error) {
+            GetTagShowResponse *response=responseObj;
+            self.tagShow=response;
+            [self.table reloadData];
+            [self.table.mj_header endRefreshing];
+            [hub setLabelText:@"加载成功"];
+        }else{
+            [hub setLabelText:@"加载失败"];
+        }
+        [hub hide:YES];
+    };
+    [[InjectHelper getBlogApi] GetTagShowRequest:request];
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [tableView tableViewDisplayWitMsg:@"无数据" ifNecessaryForRowCount:[_cate.articles count]];
-    return [_cate.articles count];
+    [tableView tableViewDisplayWitMsg:@"无数据" ifNecessaryForRowCount:[[self.tagShow result] count]];
+    return [[self.tagShow result] count];
 }
 
 -(NSMutableArray *)addTags:(ArticleModel *)article{
@@ -61,7 +92,7 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:mainTabContentCell owner:self options:nil];
         cell=[nib objectAtIndex:0];
     }
-    ArticleModel *article=_cate.articles[indexPath.row];
+    ArticleModel *article=self.tagShow.result[indexPath.row];
     if (article.thumb.length>0) {
         [ImageLoadHelper loadWithImageUrl:[NSString stringWithFormat:@"http://img.csi0n.com/%@",article.thumb] imageView:cell.head];
     }
@@ -82,9 +113,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ArticleModel *article=[self cate].articles[indexPath.row];
+    ArticleModel *article=self.tagShow.result[indexPath.row];
     DetailViewController *detail=[[DetailViewController alloc] init];
     detail.article=article;
     [self showDetailViewController:detail sender:nil];
 }
+
+
+
+
 @end

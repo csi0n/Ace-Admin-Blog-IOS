@@ -10,6 +10,10 @@
 #import "AFNetworking.h"
 #import "BaseRequest.h"
 #import "YYModel.h"
+#import "GetHomeIndexRequest.h"
+#import "GetTagIndexRequest.h"
+#import "GetTagShowRequest.h"
+#import "GetArticleSearchRequest.h"
 @implementation BlogApiImpl{
 AFHTTPSessionManager *_manager;
 }
@@ -59,7 +63,30 @@ AFHTTPSessionManager *_manager;
 }
 
 -(void)GetHomeIndexRequest:(GetHomeIndexRequest *)request{
-    NSString *url=@"http://blog.csi0n.com/api/blog/home";
+    NSString *url=@"http://www.csi0n.com/api/blog/home";
+    void(^success)(NSURLSessionDataTask *,id)=[self getSuccessCallback:request];
+    void(^failure)(NSURLSessionDataTask *,NSError *)=[self getFailCallback:request];
+    [self doHttpGet:url success:success failure:failure];
+}
+
+-(void)GetTagIndexRequest:(GetTagIndexRequest *)request{
+    NSString *url=@"http://www.csi0n.com/api/blog/tag";
+    void(^success)(NSURLSessionDataTask *,id)=[self getSuccessCallback:request];
+    void(^failure)(NSURLSessionDataTask *,NSError *)=[self getFailCallback:request];
+    [self doHttpGet:url success:success failure:failure];
+}
+
+-(void)GetTagShowRequest:(GetTagShowRequest *)request{
+    NSString *url=@"http://www.csi0n.com/api/blog/tag/%d";
+    url=[NSString stringWithFormat:url,request.tagId];
+    void(^success)(NSURLSessionDataTask *,id)=[self getSuccessCallback:request];
+    void(^failure)(NSURLSessionDataTask *,NSError *)=[self getFailCallback:request];
+    [self doHttpGet:url success:success failure:failure];
+}
+
+-(void)GetArticleSearchRequest:(GetArticleSearchRequest *)request{
+    NSString *url=@"http://www.csi0n.com/api/blog/article/search/%@";
+    url=[NSString stringWithFormat:url,request.key];
     void(^success)(NSURLSessionDataTask *,id)=[self getSuccessCallback:request];
     void(^failure)(NSURLSessionDataTask *,NSError *)=[self getFailCallback:request];
     [self doHttpGet:url success:success failure:failure];

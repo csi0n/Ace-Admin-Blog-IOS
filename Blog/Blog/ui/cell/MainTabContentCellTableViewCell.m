@@ -7,8 +7,8 @@
 //
 
 #import "MainTabContentCellTableViewCell.h"
-
 @implementation MainTabContentCellTableViewCell
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -20,5 +20,4 @@
 
     // Configure the view for the selected state
 }
-
 @end

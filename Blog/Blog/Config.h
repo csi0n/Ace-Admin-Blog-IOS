@@ -12,7 +12,7 @@
 // UIColor Helper Macro
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0 blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 // App Colors
-#define THEME_COLOR UIColorFromRGB(0x303F9F)
+#define THEME_COLOR UIColorFromRGB(0x3095F8)
 #define ALL_BACK_COLOR UIColorFromRGB(0xf0eff5)
 // 4.屏幕大小尺寸
 #define screen_width [UIScreen mainScreen].bounds.size.width

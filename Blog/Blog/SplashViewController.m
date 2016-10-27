@@ -27,7 +27,6 @@
 
 
 -(void)setup{
-    self.navigationController.navigationBar.hidden=YES;
     CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     scaleAnimation.fromValue = @1.0F;
     scaleAnimation.toValue = @1.1F;
@@ -36,7 +35,7 @@
     scaleAnimation.duration = 3;
     [_adImageView.layer addAnimation:scaleAnimation forKey:@"transform.scale"];
     [self.navigationController pushViewController:[[MainViewController alloc] init] animated:NO];
-} 
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

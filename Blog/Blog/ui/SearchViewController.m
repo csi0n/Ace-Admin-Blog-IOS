@@ -1,45 +1,57 @@
 //
-//  MainTabContentViewController.m
+//  SearchViewController.m
 //  Blog
 //
-//  Created by huaqing chen on 10/17/16.
+//  Created by huaqing chen on 10/26/16.
 //  Copyright © 2016 csi0n. All rights reserved.
 //
 
-#import "MainTabContentViewController.h"
-#import "MainTabContentCellTableViewCell.h"
+#import "SearchViewController.h"
+#import "GetArticleSearchResponse.h"
+#import "UITableView+EmptyData.h"
 #import "ArticleModel.h"
 #import "TagModel.h"
+#import "MainTabContentCellTableViewCell.h"
 #import "ImageLoadHelper.h"
-#import "DetailViewController.h"
-#import <MJRefresh/MJRefreshNormalHeader.h>
-#import "UITableView+EmptyData.h"
 #import "CFFlowButtonView.h"
 #import "Masonry.h"
-@interface MainTabContentViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import "DetailViewController.h"
+#import "GetArticleSearchRequest.h"
+#import "InjectHelper.h"
+@interface SearchViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
+@property GetArticleSearchResponse *response;
 @end
-@implementation MainTabContentViewController
+
+@implementation SearchViewController
+- (IBAction)back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _table=[[UITableView alloc]initWithFrame:self.view.frame];
     _table.separatorStyle = UITableViewCellSelectionStyleNone;
     _table.delegate=self;
     _table.dataSource=self;
-    _table.mj_header=[MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self.table reloadData];
-        [_table.mj_header endRefreshing];
-    }];
-    [self.view addSubview:_table];
+    _searchBar.delegate=self;
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+-(void)getRequest:(NSString *)key{
+    GetArticleSearchRequest *request=[GetArticleSearchRequest requestWithKey:key];
+    request.responseModelClass=[GetArticleSearchResponse class];
+    request.completionHandler=^(BaseRequest *task,id responseObj, NSError *error){
+        if (!error) {
+            GetArticleSearchResponse *response=responseObj;
+            self.response=response;
+            [self.table reloadData];
+        }
+    };
+    [[InjectHelper getBlogApi] GetArticleSearchRequest:request];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [tableView tableViewDisplayWitMsg:@"无数据" ifNecessaryForRowCount:[_cate.articles count]];
-    return [_cate.articles count];
+    
+    [tableView tableViewDisplayWitMsg:@"无数据" ifNecessaryForRowCount:[[self.response result] count]];
+    return [[self.response result] count];
 }
 
 -(NSMutableArray *)addTags:(ArticleModel *)article{
@@ -52,7 +64,6 @@
     }
     return arrs;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *mainTabContentCell = @"MainTabContentCellTableViewCell";
@@ -61,7 +72,7 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:mainTabContentCell owner:self options:nil];
         cell=[nib objectAtIndex:0];
     }
-    ArticleModel *article=_cate.articles[indexPath.row];
+    ArticleModel *article=self.response.result[indexPath.row];
     if (article.thumb.length>0) {
         [ImageLoadHelper loadWithImageUrl:[NSString stringWithFormat:@"http://img.csi0n.com/%@",article.thumb] imageView:cell.head];
     }
@@ -82,9 +93,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ArticleModel *article=[self cate].articles[indexPath.row];
+    ArticleModel *article=self.response.result[indexPath.row];
     DetailViewController *detail=[[DetailViewController alloc] init];
     detail.article=article;
     [self showDetailViewController:detail sender:nil];
 }
+
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if (searchText.length>0) {
+        [self getRequest:searchText];
+    }
+}
+
 @end

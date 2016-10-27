@@ -8,8 +8,16 @@
 
 #import <Foundation/Foundation.h>
 @class GetHomeIndexRequest;
+@class GetTagIndexRequest;
+@class GetTagShowRequest;
+@class GetArticleSearchRequest;
 @protocol BlogApi <NSObject>
 
 -(void)GetHomeIndexRequest:(GetHomeIndexRequest *)request;
 
+-(void)GetTagIndexRequest:(GetTagIndexRequest *)request;
+
+-(void)GetTagShowRequest:(GetTagShowRequest *)request;
+
+-(void)GetArticleSearchRequest:(GetArticleSearchRequest *)request;
 @end

@@ -10,11 +10,21 @@
 #import "UIView+Extension.h"
 @implementation CFFlowButtonView
 
+
+-(void)click:(UIButton *)sender{
+    if (_delegate!=nil) {
+        [_delegate click:[NSString stringWithFormat:@"%@", sender.currentTitle] tag:sender.tag];
+
+    }
+    }
+
 - (instancetype)initWithButtonList:(NSMutableArray *)buttonList {
     if (self = [super init]) {
         _buttonList = buttonList;
-        
-        for (UIButton *button in _buttonList) {
+        for (int i=0; i<_buttonList.count; i++) {
+            UIButton *button=_buttonList[i];
+            button.tag=i;
+            [button addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:button];
         }
     }

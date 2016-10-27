@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol clickTagDelegate
+-(void)click:(NSString *)string tag:(NSInteger)tag;
+@end
 @interface CFFlowButtonView : UIView
 
 /**
@@ -24,4 +26,5 @@
  */
 - (instancetype)initWithButtonList:(NSMutableArray *)buttonList;
 
+@property(assign,nonatomic) id<clickTagDelegate> delegate;
 @end

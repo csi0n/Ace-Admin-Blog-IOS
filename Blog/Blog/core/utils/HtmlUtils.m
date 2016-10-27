@@ -22,7 +22,6 @@
     return self;
 }
 
-
 -(NSString *)createCssTag:(NSString *)url{
     return [NSString stringWithFormat:_NEEDED_FORMAT_CSS_TAG,url];
 }

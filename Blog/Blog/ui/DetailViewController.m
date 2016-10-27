@@ -13,8 +13,10 @@
 #import "BLKFlexibleHeightBar.h"
 #import "SquareCashStyleBehaviorDefiner.h"
 #import "Config.h"
-@interface DetailViewController ()
+#import "MBProgressHUD.h"
+@interface DetailViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webview;
+@property MBProgressHUD *hub;
 @end
 
 @implementation DetailViewController
@@ -23,7 +25,9 @@
     [super viewDidLoad];
 
     
-    self.navigationController.navigationBar.hidden=YES;
+    _hub=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    _hub.mode=MBProgressHUDModeIndeterminate;
+    _hub.labelText=@"加载中...";
     
     BLKFlexibleHeightBar *myBar = [[BLKFlexibleHeightBar alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, 250.0)];
     myBar.minimumBarHeight = 60.0;
@@ -104,22 +108,28 @@
     [closeBtn addTarget:self action:@selector(close:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:closeBtn];
     _webview.scrollView.contentInset = UIEdgeInsetsMake(230, 0, 0, 0);
+    _webview.delegate=self;
     [_webview loadHTMLString:[[[HtmlUtils alloc] init] createHtmlData:_article.content cssUrl:_article.css] baseURL:nil];
 
 }
 
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [self.hub setLabelText:@"加载完成"];
+    [self.hub hide:YES];
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    [self.hub setLabelText:@"加载失败"];
+    [self.hub hide:YES];
+}
+
 -(void)close:(id)sender{
-    [self.navigationController popViewControllerAnimated:NO];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//    [super viewWillAppear:animated];
-//    self.navigationController.navigationBar.hidden = NO;
-//    self.navigationItem.title=_article.title;
-//}
 @end
