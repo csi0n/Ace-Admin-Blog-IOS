@@ -14,6 +14,7 @@
 #import "GetTagIndexRequest.h"
 #import "GetTagShowRequest.h"
 #import "GetArticleSearchRequest.h"
+#import "GetCommentListsRequest.h"
 @implementation BlogApiImpl{
 AFHTTPSessionManager *_manager;
 }
@@ -87,6 +88,14 @@ AFHTTPSessionManager *_manager;
 -(void)GetArticleSearchRequest:(GetArticleSearchRequest *)request{
     NSString *url=@"http://www.csi0n.com/api/blog/article/search/%@";
     url=[NSString stringWithFormat:url,request.key];
+    void(^success)(NSURLSessionDataTask *,id)=[self getSuccessCallback:request];
+    void(^failure)(NSURLSessionDataTask *,NSError *)=[self getFailCallback:request];
+    [self doHttpGet:url success:success failure:failure];
+}
+
+-(void)GetCommentListRequest:(GetCommentListsRequest *)request{
+    NSString *url=@"http://www.csi0n.com/api/blog/comments/lists/%d";
+    url=[NSString stringWithFormat:url,request.articleId];
     void(^success)(NSURLSessionDataTask *,id)=[self getSuccessCallback:request];
     void(^failure)(NSURLSessionDataTask *,NSError *)=[self getFailCallback:request];
     [self doHttpGet:url success:success failure:failure];

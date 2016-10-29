@@ -16,6 +16,7 @@
 #import "UITableView+EmptyData.h"
 #import "CFFlowButtonView.h"
 #import "Masonry.h"
+#import "MainNavControllerViewController.h"
 @interface MainTabContentViewController ()<UITableViewDataSource,UITableViewDelegate>
 @end
 @implementation MainTabContentViewController
@@ -83,8 +84,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ArticleModel *article=[self cate].articles[indexPath.row];
-    DetailViewController *detail=[[DetailViewController alloc] init];
-    detail.article=article;
-    [self showDetailViewController:detail sender:nil];
+    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Detail" bundle:[NSBundle mainBundle]];
+    DetailViewController *controller=[story instantiateViewControllerWithIdentifier:@"detail"];
+    controller.article=article;
+    [self showDetailViewController:controller sender:self];
+    
+    
+    
+    
+//    ArticleModel *article=[self cate].articles[indexPath.row];
+//    DetailViewController *detail=[[DetailViewController alloc] init];
+//    detail.article=article;
+//    [self showDetailViewController:detail sender:nil];
 }
 @end

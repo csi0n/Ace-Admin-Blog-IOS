@@ -11,6 +11,8 @@
 		8CE6D55AA6C7FF492CFB333B /* libPods-Blog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3E41863698073D32708C9C /* libPods-Blog.a */; };
 		BD2B788D1DC231E300B1CDD8 /* MainTabContentCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD2B788C1DC231E300B1CDD8 /* MainTabContentCellTableViewCell.xib */; };
 		BD471D5C1DC08D5F00D72021 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD471D5A1DC08D5F00D72021 /* SearchViewController.m */; };
+		BD79C7D41DC4A9B4007A4179 /* CommentsViewCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD79C7D21DC4A9B4007A4179 /* CommentsViewCellTableViewCell.m */; };
+		BD79C7D51DC4A9B4007A4179 /* CommentsViewCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD79C7D31DC4A9B4007A4179 /* CommentsViewCellTableViewCell.xib */; };
 		BD8A827C1DBC557D00EA1971 /* HtmlUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8A827B1DBC557D00EA1971 /* HtmlUtils.m */; };
 		BD94CEB21DB37F7D00113453 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD94CEB11DB37F7D00113453 /* main.m */; };
 		BD94CEB51DB37F7D00113453 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD94CEB41DB37F7D00113453 /* AppDelegate.m */; };
@@ -35,6 +37,10 @@
 		BDB36F041DBE0F260047CAF6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB36F031DBE0F260047CAF6 /* HomeViewController.m */; };
 		BDB36F0D1DBE33890047CAF6 /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB36F0C1DBE33890047CAF6 /* TagViewController.m */; };
 		BDB36F141DBED0520047CAF6 /* MainNavControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB36F131DBED0520047CAF6 /* MainNavControllerViewController.m */; };
+		BDD14C5A1DC324E9009F5B79 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD14C591DC324E9009F5B79 /* CommentsViewController.m */; };
+		BDD14C5D1DC32556009F5B79 /* GetCommentListsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD14C5C1DC32556009F5B79 /* GetCommentListsRequest.m */; };
+		BDD14C601DC32579009F5B79 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD14C5F1DC32579009F5B79 /* CommentModel.m */; };
+		BDD14C631DC32733009F5B79 /* GetCommentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD14C621DC32733009F5B79 /* GetCommentResponse.m */; };
 		BDD1BED31DB9ED7500C168DD /* UITableView+EmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD1BED21DB9ED7500C168DD /* UITableView+EmptyData.m */; };
 		BDD1BEDC1DBA092F00C168DD /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD1BEDB1DBA092F00C168DD /* UIView+Extension.m */; };
 		BDD1BEDF1DBA095400C168DD /* CFFlowButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD1BEDE1DBA095400C168DD /* CFFlowButtonView.m */; };
@@ -45,6 +51,7 @@
 		BDE7CCD51DB4B47400568D5D /* ImageLoadHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE7CCD41DB4B47400568D5D /* ImageLoadHelper.m */; };
 		BDE7CCDF1DB4C16D00568D5D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE7CCDD1DB4C16D00568D5D /* DetailViewController.m */; };
 		BDE7CCE01DB4C16D00568D5D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE7CCDE1DB4C16D00568D5D /* DetailViewController.xib */; };
+		BDF2C00E1DC4D4B700F42804 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDF2C00D1DC4D4B700F42804 /* Detail.storyboard */; };
 		BDF611101DBF5E710028A25D /* GetTagShowRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF6110F1DBF5E710028A25D /* GetTagShowRequest.m */; };
 		BDF611131DBF5F2E0028A25D /* GetTagShowResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF611121DBF5F2E0028A25D /* GetTagShowResponse.m */; };
 		BDF611171DBF60460028A25D /* TagShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF611151DBF60460028A25D /* TagShowViewController.m */; };
@@ -81,6 +88,9 @@
 		BD2B788C1DC231E300B1CDD8 /* MainTabContentCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainTabContentCellTableViewCell.xib; path = ui/cell/MainTabContentCellTableViewCell.xib; sourceTree = "<group>"; };
 		BD471D591DC08D5F00D72021 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = ui/SearchViewController.h; sourceTree = "<group>"; };
 		BD471D5A1DC08D5F00D72021 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = ui/SearchViewController.m; sourceTree = "<group>"; };
+		BD79C7D11DC4A9B4007A4179 /* CommentsViewCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentsViewCellTableViewCell.h; path = ui/cell/CommentsViewCellTableViewCell.h; sourceTree = "<group>"; };
+		BD79C7D21DC4A9B4007A4179 /* CommentsViewCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentsViewCellTableViewCell.m; path = ui/cell/CommentsViewCellTableViewCell.m; sourceTree = "<group>"; };
+		BD79C7D31DC4A9B4007A4179 /* CommentsViewCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentsViewCellTableViewCell.xib; path = ui/cell/CommentsViewCellTableViewCell.xib; sourceTree = "<group>"; };
 		BD8A827A1DBC557D00EA1971 /* HtmlUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HtmlUtils.h; path = core/utils/HtmlUtils.h; sourceTree = "<group>"; };
 		BD8A827B1DBC557D00EA1971 /* HtmlUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HtmlUtils.m; path = core/utils/HtmlUtils.m; sourceTree = "<group>"; };
 		BD94CEAD1DB37F7D00113453 /* Blog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +141,14 @@
 		BDB36F0C1DBE33890047CAF6 /* TagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagViewController.m; path = ui/TagViewController.m; sourceTree = "<group>"; };
 		BDB36F121DBED0520047CAF6 /* MainNavControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainNavControllerViewController.h; path = ui/MainNavControllerViewController.h; sourceTree = "<group>"; };
 		BDB36F131DBED0520047CAF6 /* MainNavControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainNavControllerViewController.m; path = ui/MainNavControllerViewController.m; sourceTree = "<group>"; };
+		BDD14C581DC324E9009F5B79 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentsViewController.h; path = ui/CommentsViewController.h; sourceTree = "<group>"; };
+		BDD14C591DC324E9009F5B79 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentsViewController.m; path = ui/CommentsViewController.m; sourceTree = "<group>"; };
+		BDD14C5B1DC32556009F5B79 /* GetCommentListsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetCommentListsRequest.h; path = business/pojo/request/GetCommentListsRequest.h; sourceTree = "<group>"; };
+		BDD14C5C1DC32556009F5B79 /* GetCommentListsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetCommentListsRequest.m; path = business/pojo/request/GetCommentListsRequest.m; sourceTree = "<group>"; };
+		BDD14C5E1DC32579009F5B79 /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentModel.h; path = business/pojo/model/CommentModel.h; sourceTree = "<group>"; };
+		BDD14C5F1DC32579009F5B79 /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentModel.m; path = business/pojo/model/CommentModel.m; sourceTree = "<group>"; };
+		BDD14C611DC32733009F5B79 /* GetCommentResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetCommentResponse.h; path = business/pojo/response/GetCommentResponse.h; sourceTree = "<group>"; };
+		BDD14C621DC32733009F5B79 /* GetCommentResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetCommentResponse.m; path = business/pojo/response/GetCommentResponse.m; sourceTree = "<group>"; };
 		BDD1BED11DB9ED7500C168DD /* UITableView+EmptyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+EmptyData.h"; sourceTree = "<group>"; };
 		BDD1BED21DB9ED7500C168DD /* UITableView+EmptyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+EmptyData.m"; sourceTree = "<group>"; };
 		BDD1BEDA1DBA092F00C168DD /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Extension.h"; path = "ui/widget/UIView+Extension.h"; sourceTree = "<group>"; };
@@ -150,6 +168,7 @@
 		BDE7CCDC1DB4C16D00568D5D /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ui/DetailViewController.h; sourceTree = "<group>"; };
 		BDE7CCDD1DB4C16D00568D5D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ui/DetailViewController.m; sourceTree = "<group>"; };
 		BDE7CCDE1DB4C16D00568D5D /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = ui/DetailViewController.xib; sourceTree = "<group>"; };
+		BDF2C00D1DC4D4B700F42804 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		BDF6110E1DBF5E710028A25D /* GetTagShowRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetTagShowRequest.h; path = business/pojo/request/GetTagShowRequest.h; sourceTree = "<group>"; };
 		BDF6110F1DBF5E710028A25D /* GetTagShowRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetTagShowRequest.m; path = business/pojo/request/GetTagShowRequest.m; sourceTree = "<group>"; };
 		BDF611111DBF5F2E0028A25D /* GetTagShowResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetTagShowResponse.h; path = business/pojo/response/GetTagShowResponse.h; sourceTree = "<group>"; };
@@ -288,6 +307,7 @@
 		BD94CEE31DB37FE700113453 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				BDF2C00D1DC4D4B700F42804 /* Detail.storyboard */,
 				BDE7CCDB1DB4BE0D00568D5D /* widget */,
 				BDE7CCCD1DB4A71A00568D5D /* cell */,
 				BD94CEE41DB3801700113453 /* SplashViewController.h */,
@@ -309,6 +329,8 @@
 				BDF611151DBF60460028A25D /* TagShowViewController.m */,
 				BD471D591DC08D5F00D72021 /* SearchViewController.h */,
 				BD471D5A1DC08D5F00D72021 /* SearchViewController.m */,
+				BDD14C581DC324E9009F5B79 /* CommentsViewController.h */,
+				BDD14C591DC324E9009F5B79 /* CommentsViewController.m */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -380,6 +402,8 @@
 				BD94CEFD1DB3A6EF00113453 /* TagModel.m */,
 				BD94CF051DB3A76A00113453 /* CateModel.h */,
 				BD94CF061DB3A76A00113453 /* CateModel.m */,
+				BDD14C5E1DC32579009F5B79 /* CommentModel.h */,
+				BDD14C5F1DC32579009F5B79 /* CommentModel.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -396,6 +420,8 @@
 				BDF6110F1DBF5E710028A25D /* GetTagShowRequest.m */,
 				BDFE4C301DC0938C00B7CD38 /* GetArticleSearchRequest.h */,
 				BDFE4C311DC0938C00B7CD38 /* GetArticleSearchRequest.m */,
+				BDD14C5B1DC32556009F5B79 /* GetCommentListsRequest.h */,
+				BDD14C5C1DC32556009F5B79 /* GetCommentListsRequest.m */,
 			);
 			name = request;
 			sourceTree = "<group>";
@@ -412,6 +438,8 @@
 				BDF611121DBF5F2E0028A25D /* GetTagShowResponse.m */,
 				BDFE4C331DC0946B00B7CD38 /* GetArticleSearchResponse.h */,
 				BDFE4C341DC0946B00B7CD38 /* GetArticleSearchResponse.m */,
+				BDD14C611DC32733009F5B79 /* GetCommentResponse.h */,
+				BDD14C621DC32733009F5B79 /* GetCommentResponse.m */,
 			);
 			name = response;
 			sourceTree = "<group>";
@@ -449,6 +477,9 @@
 				BDE7CCCE1DB4A75200568D5D /* MainTabContentCellTableViewCell.h */,
 				BDE7CCCF1DB4A75200568D5D /* MainTabContentCellTableViewCell.m */,
 				BD2B788C1DC231E300B1CDD8 /* MainTabContentCellTableViewCell.xib */,
+				BD79C7D11DC4A9B4007A4179 /* CommentsViewCellTableViewCell.h */,
+				BD79C7D21DC4A9B4007A4179 /* CommentsViewCellTableViewCell.m */,
+				BD79C7D31DC4A9B4007A4179 /* CommentsViewCellTableViewCell.xib */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -581,6 +612,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDF2C00E1DC4D4B700F42804 /* Detail.storyboard in Resources */,
+				BD79C7D51DC4A9B4007A4179 /* CommentsViewCellTableViewCell.xib in Resources */,
 				BDD1BEE11DBA0CC400C168DD /* MyButton.xib in Resources */,
 				BDE7CCE01DB4C16D00568D5D /* DetailViewController.xib in Resources */,
 				BD2B788D1DC231E300B1CDD8 /* MainTabContentCellTableViewCell.xib in Resources */,
@@ -762,6 +795,7 @@
 				BDE7CCD51DB4B47400568D5D /* ImageLoadHelper.m in Sources */,
 				BD94CEFB1DB3A63C00113453 /* ArticleModel.m in Sources */,
 				BDE7CCDF1DB4C16D00568D5D /* DetailViewController.m in Sources */,
+				BDD14C601DC32579009F5B79 /* CommentModel.m in Sources */,
 				BDFE4C351DC0946B00B7CD38 /* GetArticleSearchResponse.m in Sources */,
 				BDB36F0D1DBE33890047CAF6 /* TagViewController.m in Sources */,
 				BD94CF0E1DB3A88F00113453 /* GetHomeIndexRequest.m in Sources */,
@@ -774,13 +808,17 @@
 				BDD5A4E71DBEED5300C0EDB7 /* GetTagIndexRequest.m in Sources */,
 				BD94CF1F1DB3AF6400113453 /* BlogApiImpl.m in Sources */,
 				BDF611101DBF5E710028A25D /* GetTagShowRequest.m in Sources */,
+				BDD14C5D1DC32556009F5B79 /* GetCommentListsRequest.m in Sources */,
 				BD94CEF51DB3A5F900113453 /* BaseModel.m in Sources */,
 				BDFE4C321DC0938C00B7CD38 /* GetArticleSearchRequest.m in Sources */,
+				BD79C7D41DC4A9B4007A4179 /* CommentsViewCellTableViewCell.m in Sources */,
 				BD94CF251DB4428E00113453 /* MainViewController.m in Sources */,
+				BDD14C631DC32733009F5B79 /* GetCommentResponse.m in Sources */,
 				BD94CEE61DB3801700113453 /* SplashViewController.m in Sources */,
 				BD94CF591DB4455100113453 /* MainTabContentViewController.m in Sources */,
 				BDD1BED31DB9ED7500C168DD /* UITableView+EmptyData.m in Sources */,
 				BDB36F041DBE0F260047CAF6 /* HomeViewController.m in Sources */,
+				BDD14C5A1DC324E9009F5B79 /* CommentsViewController.m in Sources */,
 				BDD5A4EA1DBEEDA700C0EDB7 /* GetTagIndexResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

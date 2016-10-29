@@ -14,6 +14,8 @@
 #import "SquareCashStyleBehaviorDefiner.h"
 #import "Config.h"
 #import "MBProgressHUD.h"
+#import "CommentsViewController.h"
+#import "MainNavControllerViewController.h"
 @interface DetailViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webview;
 @property MBProgressHUD *hub;
@@ -51,6 +53,7 @@
     }
     
     [myBar addSubview:back];
+    
     
     
     UILabel *label = [[UILabel alloc] init];
@@ -107,6 +110,15 @@
     [closeBtn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [closeBtn addTarget:self action:@selector(close:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:closeBtn];
+    
+    
+    UIButton *commentBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+    commentBtn.frame=CGRectMake(self.view.frame.size.width-45,25,30,30);
+    commentBtn.tintColor=[UIColor whiteColor];
+    [commentBtn setImage:[UIImage imageNamed:@"ic_comment"] forState:UIControlStateNormal];
+    [commentBtn addTarget:self action:@selector(comments:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:commentBtn];
+    
     _webview.scrollView.contentInset = UIEdgeInsetsMake(230, 0, 0, 0);
     _webview.delegate=self;
     [_webview loadHTMLString:[[[HtmlUtils alloc] init] createHtmlData:_article.content cssUrl:_article.css] baseURL:nil];
@@ -128,7 +140,15 @@
 -(void)close:(id)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
+-(void)comments:(id)sender{
+    
+    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Detail" bundle:[NSBundle mainBundle]];
+    
+    MainNavControllerViewController *nav=[story instantiateViewControllerWithIdentifier:@"comments"];
+    CommentsViewController *comments=nav.viewControllers[0];
+    comments.artile=self.article;
+    [self showDetailViewController:nav sender:self];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

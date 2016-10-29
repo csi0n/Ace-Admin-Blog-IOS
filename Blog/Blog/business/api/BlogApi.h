@@ -11,6 +11,7 @@
 @class GetTagIndexRequest;
 @class GetTagShowRequest;
 @class GetArticleSearchRequest;
+@class GetCommentListsRequest;
 @protocol BlogApi <NSObject>
 
 -(void)GetHomeIndexRequest:(GetHomeIndexRequest *)request;
@@ -20,4 +21,6 @@
 -(void)GetTagShowRequest:(GetTagShowRequest *)request;
 
 -(void)GetArticleSearchRequest:(GetArticleSearchRequest *)request;
+
+-(void)GetCommentListRequest:(GetCommentListsRequest *)request;
 @end
