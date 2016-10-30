@@ -20,21 +20,29 @@
                     <view key="view" contentMode="scaleToFill" id="mN7-Dw-Hxj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AbP-jm-6sy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="webview" destination="AbP-jm-6sy" id="d8y-c9-TMd"/>
                         <segue destination="6IQ-c2-LNB" kind="showDetail" id="wU8-dJ-RLe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rls-HQ-PCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-201" y="215"/>
+            <point key="canvasLocation" x="-202.40000000000001" y="214.54272863568218"/>
         </scene>
         <!--Main Nav Controller View Controller-->
         <scene sceneID="817-ll-ZVw">
             <objects>
                 <navigationController storyboardIdentifier="comments" id="6IQ-c2-LNB" customClass="MainNavControllerViewController" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="l4O-VW-10K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l4O-VW-10K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">

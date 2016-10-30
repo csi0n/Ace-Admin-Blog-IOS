@@ -50,7 +50,6 @@
 		BDE7CCD11DB4A75200568D5D /* MainTabContentCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE7CCCF1DB4A75200568D5D /* MainTabContentCellTableViewCell.m */; };
 		BDE7CCD51DB4B47400568D5D /* ImageLoadHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE7CCD41DB4B47400568D5D /* ImageLoadHelper.m */; };
 		BDE7CCDF1DB4C16D00568D5D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE7CCDD1DB4C16D00568D5D /* DetailViewController.m */; };
-		BDE7CCE01DB4C16D00568D5D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE7CCDE1DB4C16D00568D5D /* DetailViewController.xib */; };
 		BDF2C00E1DC4D4B700F42804 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDF2C00D1DC4D4B700F42804 /* Detail.storyboard */; };
 		BDF611101DBF5E710028A25D /* GetTagShowRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF6110F1DBF5E710028A25D /* GetTagShowRequest.m */; };
 		BDF611131DBF5F2E0028A25D /* GetTagShowResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF611121DBF5F2E0028A25D /* GetTagShowResponse.m */; };
@@ -167,7 +166,6 @@
 		BDE7CCD41DB4B47400568D5D /* ImageLoadHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageLoadHelper.m; path = app/ImageLoadHelper.m; sourceTree = "<group>"; };
 		BDE7CCDC1DB4C16D00568D5D /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ui/DetailViewController.h; sourceTree = "<group>"; };
 		BDE7CCDD1DB4C16D00568D5D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ui/DetailViewController.m; sourceTree = "<group>"; };
-		BDE7CCDE1DB4C16D00568D5D /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = ui/DetailViewController.xib; sourceTree = "<group>"; };
 		BDF2C00D1DC4D4B700F42804 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		BDF6110E1DBF5E710028A25D /* GetTagShowRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetTagShowRequest.h; path = business/pojo/request/GetTagShowRequest.h; sourceTree = "<group>"; };
 		BDF6110F1DBF5E710028A25D /* GetTagShowRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetTagShowRequest.m; path = business/pojo/request/GetTagShowRequest.m; sourceTree = "<group>"; };
@@ -318,7 +316,6 @@
 				BD94CF571DB4455100113453 /* MainTabContentViewController.m */,
 				BDE7CCDC1DB4C16D00568D5D /* DetailViewController.h */,
 				BDE7CCDD1DB4C16D00568D5D /* DetailViewController.m */,
-				BDE7CCDE1DB4C16D00568D5D /* DetailViewController.xib */,
 				BDB36F021DBE0F260047CAF6 /* HomeViewController.h */,
 				BDB36F031DBE0F260047CAF6 /* HomeViewController.m */,
 				BDB36F0B1DBE33890047CAF6 /* TagViewController.h */,
@@ -615,7 +612,6 @@
 				BDF2C00E1DC4D4B700F42804 /* Detail.storyboard in Resources */,
 				BD79C7D51DC4A9B4007A4179 /* CommentsViewCellTableViewCell.xib in Resources */,
 				BDD1BEE11DBA0CC400C168DD /* MyButton.xib in Resources */,
-				BDE7CCE01DB4C16D00568D5D /* DetailViewController.xib in Resources */,
 				BD2B788D1DC231E300B1CDD8 /* MainTabContentCellTableViewCell.xib in Resources */,
 				BD94CEBD1DB37F7D00113453 /* Assets.xcassets in Resources */,
 				BD94CEBB1DB37F7D00113453 /* Main.storyboard in Resources */,

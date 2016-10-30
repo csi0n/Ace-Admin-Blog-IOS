@@ -13,9 +13,7 @@
         <scene sceneID="DzR-48-GSl">
             <objects>
                 <viewController id="PGw-at-n8d" customClass="TagViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="标签" image="rd_tag_normal" selectedImage="rd_tag_pressed" id="JhY-Kd-81j">
-                        <inset key="imageInsets" minX="2" minY="4" maxX="2" maxY="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="标签" image="rd_tag_normal" selectedImage="rd_tag_pressed" id="JhY-Kd-81j"/>
                     <navigationItem key="navigationItem" title="标签" id="QPr-y7-g79" userLabel="标签">
                         <barButtonItem key="rightBarButtonItem" image="search" id="N6s-aE-VD4">
                             <inset key="imageInsets" minX="4" minY="4" maxX="4" maxY="4"/>
@@ -84,9 +82,7 @@
         <scene sceneID="6ym-vS-vAy">
             <objects>
                 <viewController id="tOf-M1-FfV" customClass="HomeViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" image="rd_home_normal" selectedImage="rd_home_pressed" id="3nv-Cm-904">
-                        <inset key="imageInsets" minX="2" minY="4" maxX="2" maxY="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="首页" image="rd_home_normal" selectedImage="rd_home_pressed" id="3nv-Cm-904"/>
                     <navigationItem key="navigationItem" title="首页" id="kxl-Ve-hBu">
                         <barButtonItem key="rightBarButtonItem" image="search" id="h0x-JR-uAg">
                             <inset key="imageInsets" minX="4" minY="4" maxX="4" maxY="4"/>
@@ -176,7 +172,9 @@
         <scene sceneID="30S-Z1-jcn">
             <objects>
                 <navigationController id="bMN-0x-zlU" customClass="MainNavControllerViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="KXJ-Cs-qin"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="KXJ-Cs-qin">
+                        <inset key="imageInsets" minX="1" minY="-1" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VNB-yv-P6S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -196,7 +194,9 @@
         <scene sceneID="z5A-Qv-n5u">
             <objects>
                 <navigationController id="CVj-Ua-UMT" customClass="MainNavControllerViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="RSX-WA-293"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="RSX-WA-293">
+                        <inset key="imageInsets" minX="1" minY="-1" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qra-dc-5DP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -240,7 +240,7 @@
         <image name="search" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9yh-Er-ZHG"/>
+        <segue reference="LO3-uh-cIo"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

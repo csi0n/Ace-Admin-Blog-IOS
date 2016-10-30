@@ -10,4 +10,5 @@
 #import "ArticleModel.h"
 @interface DetailViewController : ViewController
 @property ArticleModel *article;
+@property (weak, nonatomic) IBOutlet UIWebView *webview;
 @end

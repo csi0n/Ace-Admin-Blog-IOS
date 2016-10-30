@@ -17,7 +17,7 @@
 #import "CommentsViewController.h"
 #import "MainNavControllerViewController.h"
 @interface DetailViewController ()<UIWebViewDelegate>
-@property (weak, nonatomic) IBOutlet UIWebView *webview;
+
 @property MBProgressHUD *hub;
 @end
 
@@ -119,7 +119,7 @@
     [commentBtn addTarget:self action:@selector(comments:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:commentBtn];
     
-    _webview.scrollView.contentInset = UIEdgeInsetsMake(230, 0, 0, 0);
+    _webview.scrollView.contentInset = UIEdgeInsetsMake(260, 0, 0, 0);
     _webview.delegate=self;
     [_webview loadHTMLString:[[[HtmlUtils alloc] init] createHtmlData:_article.content cssUrl:_article.css] baseURL:nil];
 
