@@ -16,9 +16,13 @@
 #import "MBProgressHUD.h"
 #import "CommentsViewController.h"
 #import "MainNavControllerViewController.h"
+#import "TagModel.h"
+#import "CFFlowButtonView.h"
+#import "Masonry.h"
 @interface DetailViewController ()<UIWebViewDelegate>
 
 @property MBProgressHUD *hub;
+@property CFFlowButtonView *flowButtonView;
 @end
 
 @implementation DetailViewController
@@ -122,7 +126,19 @@
     _webview.scrollView.contentInset = UIEdgeInsetsMake(260, 0, 0, 0);
     _webview.delegate=self;
     [_webview loadHTMLString:[[[HtmlUtils alloc] init] createHtmlData:_article.content cssUrl:_article.css] baseURL:nil];
+    //_flowButtonView = [[CFFlowButtonView alloc] initWithButtonList:[self addTags:_article]];
+}
 
+
+-(NSMutableArray *)addTags:(ArticleModel *)article{
+    NSMutableArray *arrs=[NSMutableArray array];
+    for (int i=0; i<[article.tags count]; i++) {
+        TagModel *tag=article.tags[i];
+        UIButton *button=[[[NSBundle mainBundle] loadNibNamed:@"MyButton" owner:self options:nil] lastObject];
+        [button setTitle:tag.name forState:UIControlStateNormal];
+        [arrs addObject:button];
+    }
+    return arrs;
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView{
@@ -131,6 +147,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     [self.hub setLabelText:@"加载完成"];
     [self.hub hide:YES];
+    
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     [self.hub setLabelText:@"加载失败"];

@@ -32,6 +32,7 @@
     _table.separatorStyle = UITableViewCellSelectionStyleNone;
     _table.delegate=self;
     _table.dataSource=self;
+    _table.backgroundColor=[UIColor groupTableViewBackgroundColor];
     _searchBar.delegate=self;
 }
 
@@ -54,49 +55,25 @@
     return [[self.response result] count];
 }
 
--(NSMutableArray *)addTags:(ArticleModel *)article{
-    NSMutableArray *arrs=[NSMutableArray array];
-    for (int i=0; i<[article.tags count]; i++) {
-        TagModel *tag=article.tags[i];
-        UIButton *button=[[[NSBundle mainBundle] loadNibNamed:@"MyButton" owner:self options:nil] lastObject];
-        [button setTitle:tag.name forState:UIControlStateNormal];
-        [arrs addObject:button];
-    }
-    return arrs;
-}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *mainTabContentCell = @"MainTabContentCellTableViewCell";
-    MainTabContentCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:mainTabContentCell];
-    if (nil==cell) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:mainTabContentCell owner:self options:nil];
-        cell=[nib objectAtIndex:0];
+    static NSString *reuseIdentifier=@"cell";
+    MainTabContentCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    if (!cell) {
+        cell=[[[NSBundle mainBundle]loadNibNamed:@"MainTabContentCellTableViewCell" owner:nil options:nil]firstObject];
     }
-    ArticleModel *article=self.response.result[indexPath.row];
-    if (article.thumb.length>0) {
-        [ImageLoadHelper loadWithImageUrl:[NSString stringWithFormat:@"http://img.csi0n.com/%@",article.thumb] imageView:cell.head];
-    }
-    cell.title.text=article.title;
-    cell.content.text=article.describe;
-    CFFlowButtonView *flowButtonView = [[CFFlowButtonView alloc] initWithButtonList:[self addTags:article]];
-    [cell.tags addSubview:flowButtonView];
-    [flowButtonView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(cell.tags.mas_top);
-        make.left.equalTo(cell.tags.mas_left);
-        make.right.equalTo(cell.tags.mas_right);
-        make.bottom.equalTo(cell.tags.mas_bottom);
-    }];
+    [cell setArticle:self.response.result[indexPath.row]];
     tableView.rowHeight = cell.frame.size.height;
-    cell.backgroundColor=[UIColor whiteColor];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ArticleModel *article=self.response.result[indexPath.row];
-    DetailViewController *detail=[[DetailViewController alloc] init];
-    detail.article=article;
-    [self showDetailViewController:detail sender:nil];
+    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Detail" bundle:[NSBundle mainBundle]];
+    DetailViewController *controller=[story instantiateViewControllerWithIdentifier:@"detail"];
+    controller.article=article;
+    [self showDetailViewController:controller sender:self];
 }
 
 

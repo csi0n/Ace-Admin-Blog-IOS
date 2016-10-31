@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CommentModel.h"
 @interface CommentsViewCellTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *headImage;
 @property (weak, nonatomic) IBOutlet UILabel *titleLb;
 @property (weak, nonatomic) IBOutlet UILabel *contentLb;
-
+-(void)setComment:(CommentModel *)comment;
 @end

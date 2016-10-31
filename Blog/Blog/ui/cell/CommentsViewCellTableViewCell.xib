@@ -6,54 +6,79 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="KGk-i7-Jjw" customClass="CommentsViewCellTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="121" id="KGk-i7-Jjw" customClass="CommentsViewCellTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="503" height="121"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+                <rect key="frame" x="0.0" y="0.0" width="503" height="121"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_comments_head" translatesAutoresizingMaskIntoConstraints="NO" id="UpD-CX-eDP">
-                        <rect key="frame" x="8" y="8" width="42" height="42"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHj-OI-7gb">
-                        <rect key="frame" x="55" y="8" width="257" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rg2-G3-Cka">
-                        <rect key="frame" x="55" y="25" width="257" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpU-J1-pzC">
+                        <rect key="frame" x="8" y="0.0" width="487" height="113"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHj-OI-7gb">
+                                <rect key="frame" x="63" y="0.0" width="416" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rg2-G3-Cka">
+                                <rect key="frame" x="63" y="17" width="416" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_comments_head" translatesAutoresizingMaskIntoConstraints="NO" id="UpD-CX-eDP">
+                                <rect key="frame" x="0.0" y="8" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="UhP-Kv-fuA"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <rect key="contentStretch" x="0.050000000000000003" y="0.050000000000000003" width="1" height="1"/>
+                        <constraints>
+                            <constraint firstItem="rg2-G3-Cka" firstAttribute="top" secondItem="HpU-J1-pzC" secondAttribute="top" constant="17" id="270-QQ-v6y"/>
+                            <constraint firstItem="rg2-G3-Cka" firstAttribute="trailing" secondItem="rHj-OI-7gb" secondAttribute="trailing" id="9wQ-0A-Ae7"/>
+                            <constraint firstItem="UpD-CX-eDP" firstAttribute="top" secondItem="HpU-J1-pzC" secondAttribute="topMargin" id="AJD-0T-kIR"/>
+                            <constraint firstItem="rHj-OI-7gb" firstAttribute="trailing" secondItem="HpU-J1-pzC" secondAttribute="trailingMargin" id="Pp1-qd-10Y"/>
+                            <constraint firstItem="UpD-CX-eDP" firstAttribute="leading" secondItem="HpU-J1-pzC" secondAttribute="leading" id="Zw7-mF-apH"/>
+                            <constraint firstItem="rHj-OI-7gb" firstAttribute="top" secondItem="HpU-J1-pzC" secondAttribute="top" id="bRW-OE-baR"/>
+                            <constraint firstAttribute="bottom" secondItem="UpD-CX-eDP" secondAttribute="bottom" constant="50" id="gRf-tc-f2g"/>
+                            <constraint firstItem="rg2-G3-Cka" firstAttribute="leading" secondItem="rHj-OI-7gb" secondAttribute="leading" id="l3k-zp-Fgy"/>
+                            <constraint firstItem="rg2-G3-Cka" firstAttribute="leading" secondItem="UpD-CX-eDP" secondAttribute="trailing" constant="8" symbolic="YES" id="lPK-QH-Mma"/>
+                            <constraint firstItem="rg2-G3-Cka" firstAttribute="centerY" secondItem="UpD-CX-eDP" secondAttribute="centerY" id="sGO-NY-bl1"/>
+                            <constraint firstAttribute="bottom" secondItem="rHj-OI-7gb" secondAttribute="bottom" constant="83" id="xhB-Vh-KeO"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                <constraints>
+                    <constraint firstItem="HpU-J1-pzC" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="3IU-Cv-yeB"/>
+                    <constraint firstItem="HpU-J1-pzC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Df5-M3-LOJ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="HpU-J1-pzC" secondAttribute="bottom" constant="-1" id="NEG-Q9-T6d"/>
+                    <constraint firstItem="HpU-J1-pzC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="dxu-Qh-4yu"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentLb" destination="rg2-G3-Cka" id="YTZ-LN-V2w"/>
                 <outlet property="headImage" destination="UpD-CX-eDP" id="tp5-01-9rK"/>
                 <outlet property="titleLb" destination="rHj-OI-7gb" id="ixd-pP-Vof"/>
             </connections>
-            <point key="canvasLocation" x="47" y="114"/>
+            <point key="canvasLocation" x="138.5" y="138.5"/>
         </tableViewCell>
-        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="noe-Se-j7p">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-            <point key="canvasLocation" x="90" y="222"/>
-        </textView>
     </objects>
     <resources>
         <image name="default_comments_head" width="195" height="195"/>

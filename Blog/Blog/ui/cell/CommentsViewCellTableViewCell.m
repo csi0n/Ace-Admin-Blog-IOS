@@ -14,7 +14,10 @@
     [super awakeFromNib];
     // Initialization code
 }
-
+-(void)setComment:(CommentModel *)comment{
+    [self.titleLb setText:comment.author_name];
+    [self.contentLb setText:comment.message];
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

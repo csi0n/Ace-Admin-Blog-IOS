@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MDTableViewCell.h"
 #import "ArticleModel.h"
+#import "TagModel.h"
 @interface MainTabContentCellTableViewCell : MDTableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *head;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *content;
 @property (weak, nonatomic) IBOutlet UIStackView *tags;
-@property ArticleModel *article;
+-(void)setArticle:(ArticleModel *)article;
+-(NSMutableArray *)addTags:(ArticleModel *)article;
 @end

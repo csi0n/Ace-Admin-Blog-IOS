@@ -14,6 +14,7 @@
 // App Colors
 #define THEME_COLOR UIColorFromRGB(0x3095F8)
 #define ALL_BACK_COLOR UIColorFromRGB(0xf0eff5)
+#define MAIN_COLOR UIColorFromRGB(0xececec)
 // 4.屏幕大小尺寸
 #define screen_width [UIScreen mainScreen].bounds.size.width
 #define screen_height [UIScreen mainScreen].bounds.size.height
